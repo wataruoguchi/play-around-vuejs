@@ -11,9 +11,12 @@
   </head>
   <body>
     <div id="main">
-      <h1 v-text="message" v-bind:title="hovertext"></h1>
+			<h1 v-text="message" v-bind:title="hovertext"></h1>
+			<input type="text" v-model="message">
       <p v-html="intro"></p>
       <p v-text="intro">Raw text rendered here</p>
+			<label><input type="checkbox" v-model="viewed"> viewed</label>
+			<label><input type="checkbox" v-model="notviewed"> not viewed</label>
       <p v-show="viewed">Viewed</p>
       <p v-show="notviewed">Display None</p>
       <p v-if="notviewed">Invisible</p>
