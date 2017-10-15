@@ -26,6 +26,12 @@
 			<p v-once v-text="immutable">Render once, then don't bother</p>
 			<div><img v-bind:src="imgurl" v-bind:alt="message"> async</div>
 			<div><img :src="imgurl" :alt="message"> async (same as above)</div>
+			<ul>
+				<li v-for="letter in letters">{{ letter.id }} {{ letter.text }}</li>
+			</ul>
+			<ul>
+				<li v-for="count in count"> #{{ count }}</li>
+			</ul>
 		</div>
     <p>In Chrome's console, type '$vm0.viewed = false'. If it does not work, select 'Root' in Vue devtool</p>
     <script src="dist/js/main.js"></script>
