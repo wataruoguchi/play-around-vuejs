@@ -8,3 +8,5 @@ app = new Vue
         viewed: true
         notviewed: false
         immutable: 'v-once is immutable'
+        hovertext: 'Hoverrrr Loaded:' + new Date()
+        imgurl: 'https://recollect.wpengine.com/wp-content/uploads/2015/10/ReCollect-Wataru-Oguchi.jpg'

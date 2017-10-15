@@ -11,7 +11,7 @@
   </head>
   <body>
     <div id="main">
-      <h1 v-text="message"></h1>
+      <h1 v-text="message" v-bind:title="hovertext"></h1>
       <p v-html="intro"></p>
       <p v-text="intro">Raw text rendered here</p>
       <p v-show="viewed">Viewed</p>
@@ -24,7 +24,9 @@
 			<p v-cloak>{{ message }}</p>
 			<p v-pre v-text="message"></p>
 			<p v-once v-text="immutable">Render once, then don't bother</p>
-    </div>
+			<div><img v-bind:src="imgurl" v-bind:alt="message"> async</div>
+			<div><img :src="imgurl" :alt="message"> async (same as above)</div>
+		</div>
     <p>In Chrome's console, type '$vm0.viewed = false'. If it does not work, select 'Root' in Vue devtool</p>
     <script src="dist/js/main.js"></script>
   </body>
