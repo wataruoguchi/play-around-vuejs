@@ -2,12 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title></title>
+		<title></title>
+		<style>
+			[v-cloak] {
+				background: red;
+			}
+		</style>
   </head>
   <body>
     <div id="main">
-      {{ message }}
+      <h1 v-text="message"></h1>
+      <p v-html="intro"></p>
+      <p v-text="intro">Raw text rendered here</p>
+      <p v-show="viewed">Viewed</p>
+      <p v-show="notviewed">Display None</p>
+      <p v-if="notviewed">Invisible</p>
+      <p v-else>Visible Else</p>
+			<p v-if="notviewed == viewed">Different way to define if</p>
+			<p v-pre>{{ message }}</p>
+			<p>{{ message }}</p>
+			<p v-cloak>{{ message }}</p>
+			<p v-pre v-text="message"></p>
+			<p v-once v-text="immutable">Render once, then don't bother</p>
     </div>
+    <p>In Chrome's console, type '$vm0.viewed = false'. If it does not work, select 'Root' in Vue devtool</p>
     <script src="dist/js/main.js"></script>
   </body>
 </html>
