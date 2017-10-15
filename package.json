@@ -11,5 +11,7 @@
   "dependencies": {
     "vue": "^2.5.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "coffee-script": "^1.12.7"
+  }
 }
