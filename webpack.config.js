@@ -4,7 +4,6 @@ const os = require('os');
 
 // Goal: Add Vue in an existing project
 //   - Can be written in Coffeescript
-//   - Use tt2 templates
 
 var config = {
     entry: {
