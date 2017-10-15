@@ -10,7 +10,22 @@
 		</style>
   </head>
   <body>
-    <div id="main">
+		<div id="main">
+			<div>
+				<ul>
+					<li>First name: {{ first }}</li>
+					<li>Last name: {{ last }}</li>
+				</ul>
+				<label>First name</label><input type="text" v-model="first">
+				<label>Last name</label><input type="text" v-model="last">
+				<h1>Hello {{ fullname }}</h1>
+			</div>
+			<div>
+				<h2>Level: {{ xp }} </h2>
+				<div>You are {{ level }}</div>
+				<button @click="addXP">Add</button>
+				<button @click="decreaseXP">Decrease</button>
+			</div>
 			<h1 v-text="message" v-bind:title="hovertext"></h1>
 			<input type="text" v-model="message">
 			<h2>{{ count }}</h2>

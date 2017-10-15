@@ -3,6 +3,8 @@ import Vue from 'vue'
 app = new Vue
     el: '#main'
     data:
+        first: ''
+        last: ''
         message: 'Hello World'
         intro: 'Welcome!<small>small</small><strong>STRONG</strong>'
         viewed: true
@@ -19,6 +21,19 @@ app = new Vue
         count: 10
         url: ""
         cleanurl: ""
+        xp: 0
+    computed:
+        fullname: () ->
+            @first + ' ' + @last
+        level: () ->
+            if @xp >= '200'
+                'Expert'
+            else if @xp >= 100
+                'Intermediate'
+            else if @xp >= 0
+                'Beginner'
+            else
+                'Banned'
     methods:
         consolelog: () ->
             console.log 'hey'
@@ -26,3 +41,7 @@ app = new Vue
             @count++
         humanizeUrl: () ->
             @cleanurl = @url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+        addXP: () ->
+            @xp += 10
+        decreaseXP: () ->
+            @xp -= 10
