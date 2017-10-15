@@ -1,0 +1,15 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "description": "Practive Vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wataru Oguchi",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.2"
+  },
+  "devDependencies": {}
+}
