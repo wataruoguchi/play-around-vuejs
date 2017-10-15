@@ -17,3 +17,12 @@ app = new Vue
             { id: 4, text: 'D' }
         ]
         count: 10
+        url: ""
+        cleanurl: ""
+    methods:
+        consolelog: () ->
+            console.log 'hey'
+        countup: () ->
+            @count++
+        humanizeUrl: () ->
+            @cleanurl = @url.replace(/^https?:\/\//, '').replace(/\/$/, '')

@@ -13,6 +13,12 @@
     <div id="main">
 			<h1 v-text="message" v-bind:title="hovertext"></h1>
 			<input type="text" v-model="message">
+			<h2>{{ count }}</h2>
+			<button v-on:click="consolelog">Console log</button>
+			<button @click="countup">Count Up</button>
+			<h3>Visit: {{ cleanurl }}</h3>
+			<input type="text" v-model="url">
+			<button @click="humanizeUrl">Humanize me!</button>
       <p v-html="intro"></p>
       <p v-text="intro">Raw text rendered here</p>
 			<label><input type="checkbox" v-model="viewed"> viewed</label>
