@@ -18,7 +18,10 @@
 				</ul>
 				<label>First name</label><input type="text" v-model="first">
 				<label>Last name</label><input type="text" v-model="last">
+				Computed properties area cached: fullname is cached
 				<h1>Hello {{ fullname }}</h1>
+				<label>Full name</label><input type="text" v-model="fullname"> Fullname does not change with this
+				<p>computed is used for output only values. One way.</p>
 			</div>
 			<div>
 				<h2>Level: {{ xp }} </h2>
