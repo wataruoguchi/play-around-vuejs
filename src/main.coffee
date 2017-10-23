@@ -1,17 +1,80 @@
 import Vue from 'vue'
 
+menus = [
+	{
+		title: 'General'
+		sub_menus: [
+			{
+				name: 'Dashboard'
+				active: true
+			}
+			{
+				name: 'Customers'
+				active: false
+			}
+		]
+	}
+	{
+		title: 'Administration'
+		sub_menus: [
+			{
+				name: 'Users'
+				active: false
+			}
+		]
+	}
+	{
+		title: 'Transactions'
+		sub_menus: [
+			{
+				name: 'Payments'
+				active: false
+			}
+			{
+				name: 'Transfers'
+				active: false
+			}
+			{
+				name: 'Balance'
+				active: false
+			}
+		]
+	}
+]
+
+app_menu_list_template = '
+	<div>
+		<app-menu :title="menu.title" :sub_menus="menu.sub_menus" v-for="menu in menus" :key="menu.title">
+		</app-menu>
+	</div>
+	'
+
+Vue.component 'app-menu-list',
+	template: app_menu_list_template
+	data: () ->
+		menus: menus
+
+app_menu_template = '
+	<div>
+		<p class="menu-label">
+			{{ title }}
+		</p>
+		<ul class="menu-list">
+			<li v-for="menu in sub_menus">
+				<a :class="isActive(menu)" >
+					{{ menu.name }}
+				</a>
+			</li>
+		</ul>
+	</div>
+	'
+
 Vue.component 'app-menu',
-	props: ['title']
-	template: '
-		<div>
-			<p class="menu-label">
-				{{ title }}
-			</p>
-			<ul class="menu-list">
-				<li><a><slot></slot></a></li>
-			</ul>
-		</div>
-	' # hmm backquote is not compiled in coffee
+	props: [ 'title', 'sub_menus' ]
+	template: app_menu_template
+	methods:
+		isActive: (menu) ->
+			if menu.active then 'is-active' else ''
 
 app = new Vue
 	el: '#app'
