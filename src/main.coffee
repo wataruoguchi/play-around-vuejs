@@ -1,6 +1,24 @@
 import Vue from 'vue'
 
+Vue.component 'app-menu',
+	props: ['title']
+	template: '
+		<div>
+			<p class="menu-label">
+				{{ title }}
+			</p>
+			<ul class="menu-list">
+				<li><a><slot></slot></a></li>
+			</ul>
+		</div>
+	' # hmm backquote is not compiled in coffee
+
 app = new Vue
+	el: '#app'
+	data:
+		{}
+
+new Vue
     el: '#main'
     data:
         first: ''
