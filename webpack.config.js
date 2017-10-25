@@ -26,9 +26,14 @@ var config = {
     plugins: [],
 };
 
-if (process.env.UGLIFY) {
+if (process.env.PROD) {
     config.devtool = 'hidden-source-map';
     config.plugins.push(
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,
             minimize: true,
