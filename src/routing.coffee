@@ -4,12 +4,20 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './home.vue'
 import About from './about.vue'
+import User from './user.vue'
+
+UserProfile =
+  template: "<div>Profile</div>"
+UserPosts =
+  template: "<div>Post # {{ $route.params.post_id }}</div>"
 
 Vue.use(VueRouter)
 
+# Path matching engine: path-to-regexp
+# https://github.com/pillarjs/path-to-regexp#parameters
 routes = [
     {
-      path: '/'
+      path: '/' # http://localhost:8080/routing.html#/
       component: Home
     }
     {
@@ -17,8 +25,22 @@ routes = [
       redirect: '/'
     }
     {
-      path: '/about'
+      path: '/about' # http://localhost:8080/routing.html#/about
       component: About
+    }
+    {
+      path: '/user/:id' # http://localhost:8080/routing.html#/user/2
+      component: User
+      children: [
+          {
+            path: 'profile'
+            component: UserProfile
+          }
+          {
+            path: 'posts/:post_id'
+            component: UserPosts
+          }
+        ]
     }
   ]
 
