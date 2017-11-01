@@ -10,7 +10,8 @@
   "author": "Wataru Oguchi",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.5.2"
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "coffee-loader": "^0.8.0",

@@ -7,7 +7,7 @@ const os = require('os');
 
 var config = {
     entry: {
-        main: './src/main.coffee',
+        main: './src/routing.coffee',
     },
     output: {
         filename: './dist/js/[name].js',
