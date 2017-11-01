@@ -15,7 +15,7 @@ var config = {
     module: {
         rules: [
             { test: /\.coffee$/, use: 'coffee-loader' },
-            { test: /\.vue$/, use: 'vue' },
+            { test: /\.vue$/, use: 'vue-loader' },
         ]
     },
     resolve: {

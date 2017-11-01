@@ -2,13 +2,10 @@
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from './home.vue'
+import About from './about.vue'
 
 Vue.use(VueRouter)
-
-Home =
-  template: '<div>Home</div>'
-About =
-  template: '<div>About</div>'
 
 routes = [
     {
