@@ -19,6 +19,7 @@ Vue.use(VueRouter)
 routes = [
     {
       path: '/' # http://localhost:8080/routing.html#/
+      alias: '/index.html'
       components:
         nav: Nav
         default: Home
