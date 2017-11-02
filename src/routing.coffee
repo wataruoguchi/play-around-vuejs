@@ -42,6 +42,7 @@ routes = [
           }
           {
             path: 'posts/:post_id'
+            name: 'user_posts'
             component: UserPosts
           }
         ]
@@ -55,5 +56,6 @@ app = new Vue
   router: router
   methods:
     jumpToUserPage: () ->
-      @.$router.push path: "/user/2/posts/1"
+      # @.$router.push path: "/user/2/posts/1"
+      @.$router.push name: 'user_posts', params: { id: 2, post_id:1 }
 .$mount('#app')
