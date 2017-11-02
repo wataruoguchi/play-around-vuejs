@@ -12,6 +12,8 @@ UserProfile =
 UserPosts =
   template: "<div>Post # {{ post_id }}</div>"
   props: ['post_id']
+NotFoundComponent =
+  template: "<div>Not found</div>"
 
 Vue.use(VueRouter)
 
@@ -55,6 +57,10 @@ routes = [
             props: true
           }
         ]
+    }
+    {
+      path: '*'
+      component: NotFoundComponent
     }
   ]
 
