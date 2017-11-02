@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import Home from './home.vue'
 import About from './about.vue'
 import User from './user.vue'
+import Nav from './nav.vue'
 
 UserProfile =
   template: "<div>Profile</div>"
@@ -18,7 +19,9 @@ Vue.use(VueRouter)
 routes = [
     {
       path: '/' # http://localhost:8080/routing.html#/
-      component: Home
+      components:
+        nav: Nav
+        default: Home
     }
     {
       path: '/home'
@@ -26,7 +29,9 @@ routes = [
     }
     {
       path: '/about' # http://localhost:8080/routing.html#/about
-      component: About
+      components:
+        nav: Nav # Maybe this is a bad example. We don't want to repeat this every time
+        default: About
     }
     {
       path: '/user'
@@ -54,8 +59,4 @@ router = new VueRouter
 
 app = new Vue
   router: router
-  methods:
-    jumpToUserPage: () ->
-      # @.$router.push path: "/user/2/posts/1"
-      @.$router.push name: 'user_posts', params: { id: 2, post_id:1 }
 .$mount('#app')

@@ -6,12 +6,7 @@
 </head>
 <body>
   <div id="app">
-	  <h1>VueJs Router</h1>
-    <p>
-			<router-link to="/">Go to Home</router-link> //
-			<router-link to="/about">Go to About</router-link>
-			<button @click="jumpToUserPage">Go to User 2's post 1 page</button>
-		</p>
+	  <router-view name="nav"></router-view>
 	  <router-view></router-view>
 	</div>
   <script src="dist/js/main.js"></script>
