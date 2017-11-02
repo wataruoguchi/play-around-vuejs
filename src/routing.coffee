@@ -10,7 +10,8 @@ import Nav from './nav.vue'
 UserProfile =
   template: "<div>Profile</div>"
 UserPosts =
-  template: "<div>Post # {{ $route.params.post_id }}</div>"
+  template: "<div>Post # {{ post_id }}</div>"
+  props: ['post_id']
 
 Vue.use(VueRouter)
 
@@ -40,7 +41,8 @@ routes = [
     }
     {
       path: '/user/:id' # http://localhost:8080/routing.html#/user/2
-      component: User
+      components: { default: User }
+      props: { default: true }
       children: [
           {
             path: 'profile'
@@ -50,6 +52,7 @@ routes = [
             path: 'posts/:post_id'
             name: 'user_posts'
             component: UserPosts
+            props: true
           }
         ]
     }
