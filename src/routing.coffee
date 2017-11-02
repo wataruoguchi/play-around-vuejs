@@ -29,6 +29,10 @@ routes = [
       component: About
     }
     {
+      path: '/user'
+      redirect: '/user/1'
+    }
+    {
       path: '/user/:id' # http://localhost:8080/routing.html#/user/2
       component: User
       children: [
@@ -47,4 +51,9 @@ routes = [
 router = new VueRouter
   routes: routes
 
-app = new Vue(router: router).$mount('#app')
+app = new Vue
+  router: router
+  methods:
+    jumpToUserPage: () ->
+      @.$router.push path: "/user/2/posts/1"
+.$mount('#app')
