@@ -10,7 +10,9 @@
   "author": "Wataru Oguchi",
   "license": "ISC",
   "dependencies": {
+    "css-loader": "^0.28.7",
     "vue": "^2.5.2",
+    "vue-multiselect": "^2.0.6",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

@@ -1,4 +1,12 @@
 import Vue from 'vue'
+import MyMultiselect from './MyMultiselect.vue'
+multiselect = Vue.component('my-multiselect', MyMultiselect)
+
+$('#jquery-button').on 'click', (e) ->
+    newArray = []
+    $('.multiselect__tags .multiselect__tag').map (el) ->
+      newArray.push $(this).find('span').text()
+    console.log newArray.join(',') || 'none'
 
 menus = [
 	{
